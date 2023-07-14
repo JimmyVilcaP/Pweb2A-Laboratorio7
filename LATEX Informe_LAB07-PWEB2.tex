@@ -1,0 +1,114 @@
+\documentclass{article}
+
+% Paquetes necesarios
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{cite}
+\usepackage{hyperref}
+
+\title{Programación Web 2 - Grupo B/Lab7\\
+Relaciones de uno a muchos, muchos a muchos y generación de PDF y envío de emails}
+\author{
+Alumno: Vilca Peralta, Jimmy Joaquín\\
+Docente: Corrales Delgado, Carlo Jose Luis}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{ACTIVIDAD}
+
+\textbf{Reproducir las actividades de los videos donde trabajamos:}
+
+1. Relación de uno a muchos
+
+2. Relación muchos a muchos
+
+3. Impresión de pdfs 
+
+4. Envio de emails
+
+\section{RESOLUCIÓN}
+
+Durante la realización de esta actividad utilizando Django, visualizamos cuatro actividades: la relación de uno a muchos, la relación muchos a muchos, la generación de PDFs y el envío de correos electrónicos.
+
+\subsection{Impresión de PDF's}
+En cuanto a la generación de PDFs, utilizamos la biblioteca externa xhtml2pdf junto con Django. Creamos una función llamada \texttt{render\_to\_pdf} que tomó como argumento la ruta de una plantilla HTML. Esta función utilizó la biblioteca xhtml2pdf para convertir el HTML resultante en un archivo PDF. El archivo PDF se devolvió como una respuesta HTTP, lo que permitió su descarga o visualización por parte del usuario.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.75\linewidth]{image.png}
+    \caption{Visualización}
+    \label{fig:enter-label}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{imagen_2023-07-14_154052466.png}
+    \caption{Función render to PDF}
+    \label{fig:enter-label}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{imagen_2023-07-14_154736021.png}
+    \caption{Generador del PDF}
+    \label{fig:enter-label}
+\end{figure}
+
+\subsection{Envío de Emails}
+Por otra parte, implementamos la funcionalidad de envío de correos electrónicos utilizando las capacidades integradas de Django. Configuramos los ajustes necesarios en el archivo de configuración de Django (settings.py) para el envío de correos electrónicos. Establecimos el backend de correo electrónico como \texttt{django.core.mail.backends.smtp.EmailBackend} y proporcionamos los detalles de configuración necesarios, como el servidor de correo saliente (EMAIL\_HOST), el puerto (EMAIL\_PORT), el nombre de usuario (EMAIL\_HOST\_USER), la contraseña (EMAIL\_HOST\_PASSWORD) y si se debe utilizar TLS (EMAIL\_USE\_TLS).Además, establecimos la dirección de correo electrónico predeterminada desde la cual se enviarían los correos electrónicos (DEFAULT\_FROM\_EMAIL).
+
+Al utilizar la configuración mencionada, pudimos enviar correos electrónicos desde nuestra aplicación Django. Esto nos permitió enviar notificaciones, informes generados en formato PDF u otro tipo de comunicación relevante a los usuarios de nuestra aplicación.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\linewidth]{imagen_2023-07-14_160007787.png}
+    \caption{ Configuración para el envío de Email}
+    \label{fig:enter-label}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\linewidth]{a.png}
+    \caption{Envío y confirmación del Email}
+    \label{fig:enter-label}
+\end{figure}
+
+Finalmente, Mediante el uso de Django logramos implementar relaciones de uno a muchos y muchos a muchos en nuestra base de datos, generar PDFs personalizados y enviar correos electrónicos utilizando la configuración adecuada en el archivo settings.py. Estas funcionalidades son fundamentales en el desarrollo de aplicaciones web y permiten una interacción eficiente y efectiva con los usuarios.
+
+\vspace{10pt}
+ENLACE ARCHIVOS: 
+\href{https://github.com/JimmyVilcaP/Pweb2A-Laboratorio7.git}{GitHub - JimmyVilcaP/Pweb2A-Laboratorio7}
+
+\section{Conclusiones}
+
+Durante la realización de esta actividad utilizando Django, he explorado y aplicado diversas funcionalidades fundamentales para el desarrollo de aplicaciones web. Mediante el uso de relaciones de uno a muchos y muchos a muchos, hemos sido capaces de establecer conexiones entre entidades en nuestra base de datos, lo cual nos permite representar y acceder a datos relacionados de manera eficiente.
+
+Además, he aprendido a generar archivos PDF dinámicamente utilizando la biblioteca xhtml2pdf, lo cual nos ha permitido crear informes personalizados y otros documentos en formato PDF. Esto resulta especialmente útil para presentar información de manera estructurada y profesional.
+
+Por último, hemos implementado la funcionalidad de envío de correos electrónicos utilizando las capacidades integradas de Django. Esto nos ha brindado la capacidad de comunicarnos con los usuarios de nuestras aplicaciones mediante el envío automatizado de mensajes y notificaciones importantes.
+
+Estas funcionalidades, en conjunto, nos proporcionan las herramientas necesarias para desarrollar aplicaciones web completas, capaces de gestionar y presentar datos de manera eficiente, así como de interactuar con los usuarios de manera efectiva. A través de esta actividad, he adquirido conocimientos y habilidades que serán de gran utilidad en proyectos futuros.
+
+\section{Referencias}
+
+\begin{thebibliography}{9}
+\bibitem{video1} One To Many Relationships-8.m4v
+
+\bibitem{video2} Query One To Many-10.m4v
+
+\bibitem{video3} Many To Many Relationships-11.m4v
+
+\bibitem{video4} Many To Many Query-12.m4v
+
+\bibitem{video5} Database Settings-13.m4v
+
+\bibitem{video6} Render a Django HTML Template to a PDF file Django Utility CFE Render to PDF.mp4
+
+\bibitem{video7} Sending Emails in Django.mp4
+\end{thebibliography}
+
+\end{document}
